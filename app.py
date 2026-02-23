@@ -120,8 +120,28 @@ def build_excel(df: pd.DataFrame) -> bytes:
     wb.save(out2)
     return out2.getvalue()
 
-st.title("Extrator de Pedidos (Atacadão)")
-st.write("1) Faça upload dos PDFs  2) Clique em **Extrair pedidos**  3) Baixe o Excel.")
+# =========================
+# UI (layout e textos)
+# =========================
+
+logo_url = "https://logodownload.org/wp-content/uploads/2018/06/atacadao-logo.png"
+
+# Logo no canto superior esquerdo + Título ao lado
+col_logo, col_title = st.columns([1, 7], vertical_alignment="center")
+with col_logo:
+    st.image(logo_url, width=140)
+with col_title:
+    st.title("Extrator de Pedidos (Atacadão)")
+    st.markdown("<small><i>Criado por Caiã Ricardo Grade.</i></small>", unsafe_allow_html=True)
+
+# Passo a passo quebrado em linhas
+st.markdown(
+    """
+1) Faça upload dos PDFs  
+2) Clique em **Extrair pedidos**  
+3) Baixe o Excel.
+"""
+)
 
 pdfs = st.file_uploader("Upload de PDFs", type=["pdf"], accept_multiple_files=True)
 
@@ -153,3 +173,5 @@ if run:
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                 use_container_width=True,
             )
+
+            st.success("Conversão realizada!!!")
