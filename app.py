@@ -131,8 +131,8 @@ col_logo, col_title = st.columns([1, 7], vertical_alignment="center")
 with col_logo:
     st.image(logo_url, width=140)
 with col_title:
-    st.title("Extrator de Pedidos (Atacadão)")
-    st.markdown("<small><i>Criado por Caiã Ricardo Grade.</i></small>", unsafe_allow_html=True)
+    st.title("Extrator de Pedidos Atacadão - PDF")
+    st.markdown("<small><i>Criado por Caiã Ricardo Grade :D.</i></small>", unsafe_allow_html=True)
 
 # Passo a passo quebrado em linhas
 st.markdown(
