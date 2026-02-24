@@ -132,7 +132,7 @@ with col_logo:
     st.image(logo_url, width=140)
 with col_title:
     st.title("Extrator de Pedidos Atacadão - PDF")
-    st.markdown("<small><i>Criado por Caiã Ricardo Grade :D.</i></small>", unsafe_allow_html=True)
+    st.markdown("<small><i>Criado por Caiã Ricardo Grade.</i></small>", unsafe_allow_html=True)
 
 # Passo a passo quebrado em linhas
 st.markdown(
@@ -145,7 +145,7 @@ st.markdown(
 
 pdfs = st.file_uploader("Upload de PDFs", type=["pdf"], accept_multiple_files=True)
 
-run = st.button("🚀 Extrair pedidos", use_container_width=True, disabled=not pdfs)
+run = st.button("📋 Extrair pedidos", use_container_width=True, disabled=not pdfs)
 
 if run:
     all_rows = []
